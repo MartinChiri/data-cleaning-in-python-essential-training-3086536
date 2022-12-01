@@ -20,5 +20,4 @@ import numpy as np
 mask = df['name'].str.strip() == ''
 df.loc[mask, 'name'] = np.nan
 # %%
-
 df[df.isnull().any(axis=1)]

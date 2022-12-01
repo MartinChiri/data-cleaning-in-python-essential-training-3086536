@@ -17,9 +17,12 @@ pd.pivot(df, index='time', columns='name').plot(subplots=True)
 # %%
 df.query('name == "cpu" & (value < 0 | value > 100)')
 
-# %% 
+# %%
 mem = df[df['name'] == 'mem']['value']
 z_score = (mem - mem.mean())/mem.std()
 bad_mem = mem[z_score.abs() > 2]
 # bad_mem
 df.loc[bad_mem.index]
+
+# %%
+
